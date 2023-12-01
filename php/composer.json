@@ -1,0 +1,18 @@
+{
+    "name": "akipe/advent_of_code_2023",
+    "description": "My work about Advent of code 2023",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Akipe\\AdventOfCode2023\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Julien Milletre Akipe",
+            "email": "code.julien@milletre.fr"
+        }
+    ],
+    "require": {}
+}
