@@ -5,8 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Akipe\\AdventOfCode2023\\": "src/",
-            "Akipe\\AdventOfCode2023Test\\": "test/"
+            "Akipe\\AdventOfCode2023\\": "src/"
         }
     },
     "authors": [

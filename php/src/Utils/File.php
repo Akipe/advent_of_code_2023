@@ -2,6 +2,7 @@
 
 namespace Akipe\AdventOfCode2023\Utils;
 
+use Exception;
 use Iterator;
 
 class File implements Iterator
@@ -62,5 +63,19 @@ class File implements Iterator
     public function rewind(): void
     {
         $this->index = 0;
+    }
+
+    public function getContentLine(int $number)
+    {
+        if (!$this->isNumberLineValid($number)) {
+            throw new Exception("The line does not exist");
+        }
+
+        return $this->lines[$number];
+    }
+
+    private function isNumberLineValid(int $number)
+    {
+        return $number < count($this->lines) && $number >= 0;
     }
 }
