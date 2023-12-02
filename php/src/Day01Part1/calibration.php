@@ -7,8 +7,8 @@ use Exception;
 
 require_once '../../vendor/autoload.php';
 
-define("CALIBRATION_INPUT_EXAMPLE", "./input_example.txt");
-define("CALIBRATION_INPUT_PATH", "./input.txt");
+define("CALIBRATION_INPUT_EXAMPLE", "../../../data/Day01Part1/input_example.txt");
+define("CALIBRATION_INPUT_PATH", "../../../data/Day01Part1/input.txt");
 
 function getFirstDigit(string $line): int|false
 {
