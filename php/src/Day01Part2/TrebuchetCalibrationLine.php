@@ -17,29 +17,36 @@ class TrebuchetCalibrationLine
 
     private function findAllNameDigit(): void
     {
-        foreach (DigitName::cases() as $case) {
-            $index = $this->getPositionFirstOccurrence(strtolower($case->name));
-            if ($index !== false) {
-                $this->digitsFounds[$index] = $case->value;
-            }
-            $index = $this->getPositionLastOccurrence(strtolower($case->name));
-            if ($index !== false) {
-                $this->digitsFounds[$index] = $case->value;
-            }
+        foreach (DigitName::cases() as $digitName) {
+            $this->saveDigitPatternIfFound(
+                $digitName->value,
+                $this->getPositionFirstOccurrence((string) strtolower($digitName->name))
+            );
+            $this->saveDigitPatternIfFound(
+                $digitName->value,
+                $this->getPositionLastOccurrence((string) strtolower($digitName->name))
+            );
         }
     }
 
     private function findAllNumberDigit(): void
     {
         for ($digit = 0; $digit <= 9; $digit++) {
-            $index = $this->getPositionFirstOccurrence((string) $digit);
-            if ($index !== false) {
-                $this->digitsFounds[$index] = $digit;
-            }
-            $index = $this->getPositionLastOccurrence($digit);
-            if ($index !== false) {
-                $this->digitsFounds[$index] = $digit;
-            }
+            $this->saveDigitPatternIfFound(
+                $digit,
+                $this->getPositionFirstOccurrence((string) $digit)
+            );
+            $this->saveDigitPatternIfFound(
+                $digit,
+                $this->getPositionLastOccurrence((string) $digit)
+            );
+        }
+    }
+
+    private function saveDigitPatternIfFound(string $digitPattern, int|false $position): void
+    {
+        if ($position !== false) {
+            $this->digitsFounds[$position] = $digitPattern;
         }
     }
 
