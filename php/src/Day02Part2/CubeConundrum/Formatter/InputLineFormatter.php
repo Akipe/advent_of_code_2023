@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Formatter;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Formatter;
 
-use Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Cube\CubeColor;
-use Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Game;
-use Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Round;
-use Akipe\AdventOfCode2023\Utils\SuperString;
+use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Cube\CubeColor;
+use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Game;
+use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Round;
 
 class InputLineFormatter
 {
@@ -117,7 +116,7 @@ class InputLineFormatter
         &$currentMaxCubCategory,
         $cubeCategory,
     ) {
-        if ($currentMaxCubCategory < $cubeCategory) {
+        if ($currentMaxCubCategory < $cubeCategory && $cubeCategory != 0) {
             $currentMaxCubCategory = $cubeCategory;
         }
     }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum;
 
-use Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Cube\CubeColor;
+use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Cube\CubeColor;
 
 class Round
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Cube;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Cube;
 
 enum CubeColor: string
 {

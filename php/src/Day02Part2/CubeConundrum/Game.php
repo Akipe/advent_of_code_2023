@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum;
 
 class Game
 {
@@ -20,17 +20,17 @@ class Game
         return $this->id;
     }
 
-    public function getMaxRedCube()
+    public function getMaxRedCube(): int
     {
         return $this->maxRedCube;
     }
 
-    public function getMaxGreenCube()
+    public function getMaxGreenCube(): int
     {
         return $this->maxGreenCube;
     }
 
-    public function getMaxBlueCube()
+    public function getMaxBlueCube(): int
     {
         return $this->maxBlueCube;
     }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\Formatter;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Formatter;
 
-use Akipe\AdventOfCode2023\Day02Part1\CubeConundrum\EntireGame;
+use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\EntireGame;
 use Akipe\AdventOfCode2023\Utils\File;
 
 class InputFormatter

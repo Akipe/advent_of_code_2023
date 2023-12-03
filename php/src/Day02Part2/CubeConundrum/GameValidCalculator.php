@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Akipe\AdventOfCode2023\Day02Part1\CubeConundrum;
+namespace Akipe\AdventOfCode2023\Day02Part2\CubeConundrum;
 
 class GameValidCalculator
 {
@@ -42,6 +42,26 @@ class GameValidCalculator
             $maxRedCude >= $game->getMaxRedCube() &&
             $maxGreenCube >= $game->getMaxGreenCube() &&
             $maxBlueCude >= $game->getMaxBlueCube()
+        ;
+    }
+
+    public function getSumMinimumCubeMultiply(): int
+    {
+        $result = 0;
+
+        foreach($this->entireGame->getGames() as $game) {
+            $result += $this->multiplyMinimumCubeEachColor($game);
+        }
+
+        return $result;
+    }
+
+    private function multiplyMinimumCubeEachColor(Game $game): int
+    {
+        return
+            $game->getMaxRedCube() *
+            $game->getMaxGreenCube() *
+            $game->getMaxBlueCube()
         ;
     }
 }
