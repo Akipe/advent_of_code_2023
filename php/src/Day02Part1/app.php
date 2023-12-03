@@ -10,7 +10,7 @@ require_once '../../vendor/autoload.php';
 
 # Example data
 
-// define("CALIBRATION_INPUT_EXAMPLE_PATH", "../../../data/Day02Part1/input_example.txt");
+// define("CALIBRATION_INPUT_EXAMPLE_PATH", "../../../statement/Day02Part1/input_example.txt");
 // define("MAX_RED_CUBE_EXAMPLE", 12);
 // define("MAX_GREEN_CUBE_EXAMPLE", 13);
 // define("MAX_BLUE_CUBE_EXAMPLE", 14);
@@ -29,7 +29,7 @@ require_once '../../vendor/autoload.php';
 
 # Statement data
 
-define("CALIBRATION_INPUT_PATH", "../../../data/Day02Part1/input.txt");
+define("CALIBRATION_INPUT_PATH", "../../../statement/Day02Part1/input.txt");
 define("MAX_RED_CUBE", 12);
 define("MAX_GREEN_CUBE", 13);
 define("MAX_BLUE_CUBE", 14);

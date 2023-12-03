@@ -10,7 +10,7 @@ require_once '../../vendor/autoload.php';
 
 # Example data
 
-define("CALIBRATION_INPUT_EXAMPLE_PATH", "../../../data/Day02Part2/input_example.txt");
+define("CALIBRATION_INPUT_EXAMPLE_PATH", "../../../statement/Day02Part2/input_example.txt");
 
 $input = new File(CALIBRATION_INPUT_EXAMPLE_PATH);
 $inputFormatter = new InputFormatter($input);
@@ -21,7 +21,7 @@ echo $gameValidCalculator->getSumMinimumCubeMultiply() . PHP_EOL; # Result : 228
 
 # Statement data
 
-define("CALIBRATION_INPUT_PATH", "../../../data/Day02Part2/input.txt");
+define("CALIBRATION_INPUT_PATH", "../../../statement/Day02Part2/input.txt");
 
 $input = new File(CALIBRATION_INPUT_PATH);
 $inputFormatter = new InputFormatter($input);
