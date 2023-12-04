@@ -10,45 +10,59 @@ use Akipe\AdventOfCode2023\Day03Part1\GearRatios\EngineSchematic\PartNumberCalcu
 
 require_once '../../vendor/autoload.php';
 
-# Example input
-
-define("ENGINE_SCHEMATIC_EXAMPLE_INPUT", "../../../statement/Day03Part1/input_example.txt");
-
-$generator = new Generator(
-    new File(ENGINE_SCHEMATIC_EXAMPLE_INPUT)
-);
-
-$parser = new Parser($generator->getMatrix());
-
-$partNumberCalculator = new PartNumberCalculator($parser->getElements());
-
-echo PHP_EOL . PHP_EOL . $partNumberCalculator->getValue() . PHP_EOL; # 4361
-
-# Statement input
-
 define("ENGINE_SCHEMATIC_INPUT", "../../../statement/Day03Part1/input.txt");
+$signes = ['*','=','/','%','#','-','+','@','$','&'];
 
-$generator = new Generator(
-    new File(ENGINE_SCHEMATIC_INPUT)
-);
+$file = new File(ENGINE_SCHEMATIC_INPUT);
+$lines = $file->getLines();
+$numbersSum = 0;
+$maxLines = count($lines);
 
-$parser = new Parser($generator->getMatrix());
+for ($lineIndex = 0; $lineIndex < $maxLines; $lineIndex++) {
+    $numberFound = "";
+    $numberHasSymbolNear = false;
 
-$partNumberCalculator = new PartNumberCalculator($parser->getElements());
+    for ($letterIndex = 0; $letterIndex < strlen($lines[$lineIndex]); $letterIndex++) {
 
-echo PHP_EOL . PHP_EOL . $partNumberCalculator->getValue() . PHP_EOL; # 540324 ?
+        if (is_numeric($lines[$lineIndex][$letterIndex])) {
+            $numberFound .= (string) $lines[$lineIndex][$letterIndex];
 
-function getAllSpecialChar(File $file): array
-{
-    $specialsCharsFound = [];
-
-    foreach($file as $line) {
-        $lineWithoutPoint = str_replace(".", "", $line);
-        $lineWithoutNumbers = preg_replace('/[0-9]+/', '', $lineWithoutPoint);
-        $specialsCharsFound = array_merge($specialsCharsFound, str_split($lineWithoutNumbers));
+            if (!$numberHasSymbolNear) {
+                for(
+                    $lineIndexNear = $lineIndex - 1;
+                    $lineIndexNear <= $lineIndex + 1;
+                    $lineIndexNear++
+                ) {
+                    for (
+                        $letterIndexNear = $letterIndex - 1;
+                        $letterIndexNear <= $letterIndex + 1;
+                        $letterIndexNear++
+                    ){
+                        if (
+                            isset($lines[$lineIndexNear][$letterIndexNear])
+                            && in_array($lines[$lineIndexNear][$letterIndexNear], $signes)
+                        ) {
+                            $numberHasSymbolNear = true;
+                        }
+                    }
+                }
+            }
+        } else {
+            if ($numberHasSymbolNear) {
+                echo $numberFound . PHP_EOL;
+                $numbersSum += (int) $numberFound;
+                $numberHasSymbolNear = false;
+            }
+            $numberFound = "";
+        }
+        if (!isset($lines[$lineIndex][$letterIndex + 1])) {
+            if ($numberHasSymbolNear) {
+                echo $numberFound . PHP_EOL;
+                $numbersSum += (int) $numberFound;
+                $numberHasSymbolNear = false;
+            }
+        }
     }
-
-    return array_unique($specialsCharsFound);
 }
 
-$debugSpecialChar = getAllSpecialChar(new File(ENGINE_SCHEMATIC_INPUT));
+echo $numbersSum; # Result : 543867

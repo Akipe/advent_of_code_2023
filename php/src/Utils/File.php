@@ -40,6 +40,15 @@ class File implements Iterator
         $this->lines = explode(PHP_EOL, $this->content);
     }
 
+    /**
+     *
+     * @return array<string>
+     */
+    public function getLines(): array
+    {
+        return $this->lines;
+    }
+
     public function current(): mixed
     {
         return $this->lines[$this->index];
