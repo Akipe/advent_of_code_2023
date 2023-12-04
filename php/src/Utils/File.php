@@ -37,12 +37,12 @@ class File implements Iterator
 
     public function setLines(): void
     {
-        $this->lines = explode(PHP_EOL, $this->content);
+        $this->lines = array_filter(explode(PHP_EOL, $this->content));
     }
 
     /**
      *
-     * @return array<string>
+     * @return array
      */
     public function getLines(): array
     {
@@ -77,7 +77,8 @@ class File implements Iterator
     public function getContentLine(int $number)
     {
         if (!$this->isNumberLineValid($number)) {
-            throw new Exception("The line does not exist");
+            // throw new Exception("The line does not exist");
+            return "";
         }
 
         return $this->lines[$number];
