@@ -57,7 +57,7 @@ class File implements Iterator
 
     public function valid(): bool
     {
-        return $this->index < count($this->lines);
+        return $this->index < $this->getNumberLines();
     }
 
     public function rewind(): void
@@ -76,6 +76,11 @@ class File implements Iterator
 
     private function isNumberLineValid(int $number)
     {
-        return $number < count($this->lines) && $number >= 0;
+        return $number < $this->getNumberLines() && $number >= 0;
+    }
+
+    public function getNumberLines(): int
+    {
+        return count($this->lines);
     }
 }
