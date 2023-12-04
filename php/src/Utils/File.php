@@ -74,17 +74,25 @@ class File implements Iterator
         $this->index = 0;
     }
 
-    public function getContentLine(int $number)
+    public function getContentLine(int $number): string
     {
         if (!$this->isNumberLineValid($number)) {
-            // throw new Exception("The line does not exist");
-            return "";
+            throw new Exception("The line does not exist");
         }
 
         return $this->lines[$number];
     }
 
-    private function isNumberLineValid(int $number)
+    public function getLengthLine(int $number): int
+    {
+        if (!$this->isNumberLineValid($number)) {
+            throw new Exception("The line does not exist");
+        }
+
+        return strlen($this->getContentLine($number));
+    }
+
+    private function isNumberLineValid(int $number): bool
     {
         return $number < $this->getNumberLines() && $number >= 0;
     }
