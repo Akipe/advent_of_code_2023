@@ -1,0 +1,19 @@
+{
+  "name": "advent_of_code_2023",
+  "version": "1.0.0",
+  "description": "Advent of code 2023 ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start-d5p1": "node typescript/out/Day05Part1/app.js",
+    "dev-d5p1": "concurrently \"npx tsc --watch\" \"nodemon -q typescript/out/Day05Part1/app.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.3",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
