@@ -5,7 +5,7 @@ namespace Akipe\AdventOfCode2023\Day01Part1;
 use Akipe\AdventOfCode2023\Utils\File;
 use Exception;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 define("CALIBRATION_INPUT_EXAMPLE", "../../../statement/Day01Part1/input_example.txt");
 define("CALIBRATION_INPUT_PATH", "../../../statement/Day01Part1/input.txt");

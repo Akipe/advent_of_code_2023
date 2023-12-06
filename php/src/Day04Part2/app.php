@@ -4,7 +4,7 @@
 
 use Akipe\AdventOfCode2023\Utils\File;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 /**
  * @param string $line

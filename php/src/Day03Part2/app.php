@@ -6,7 +6,7 @@ use Akipe\AdventOfCode2023\Day03Part2\GearRatios\ParseInput;
 use Akipe\AdventOfCode2023\Utils\File;
 use Akipe\AdventOfCode2023\Day03Part2\GearRatios\GearCalculator;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 # Example
 

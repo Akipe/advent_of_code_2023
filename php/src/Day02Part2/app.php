@@ -6,7 +6,7 @@ use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\Formatter\InputFormatter;
 use Akipe\AdventOfCode2023\Day02Part2\CubeConundrum\GameValidCalculator;
 use Akipe\AdventOfCode2023\Utils\File;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 # Example data
 

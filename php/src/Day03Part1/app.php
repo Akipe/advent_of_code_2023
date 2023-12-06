@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Akipe\AdventOfCode2023\Utils\File;
 
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 define("ENGINE_SCHEMATIC_INPUT", "../../../statement/Day03Part1/input.txt");
 define("ENGINE_SCHEMATIC_INPUT_EXAMPLE", "../../../statement/Day03Part1/input_example.txt");
